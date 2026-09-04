@@ -1,22 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Reel Australia – Australian TV Game Shows</title>
+    <title>PLAY BACK — Australian TV Game Shows</title>
 
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <h1>Reel Australia</h1>
 
-  <div id="output"></div>
+<!-- NAV -->
 
-  <script src="assets/js/script.js"></script>
+    <header class="site-header">
+        <a href="index.html" class="site-logo">PLAY BACK</a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#about">ABOUT</a>
+        </nav>
+    </header>
+
+    
+
+<svg class="header-accent" viewBox="0 0 1400 60" preserveAspectRatio="none" aria-hidden="true">
+        <rect x="0" y="0"  width="1400" height="12" fill="#da5161"/>
+        <rect x="0" y="12"  width="1400" height="12" fill="#e59011"/>
+        <rect x="0" y="24" width="1400" height="12" fill="#5b820e"/>
+        <rect x="0" y="36" width="1400" height="12" fill="#38a6a3"/>
+        <rect x="0" y="48" width="1400" height="12" fill="#a12b99"/>
+    </svg>
+    
+
+    <main>
+
+<!-- HERO/INTRODUCTION -->
+
+        <section class="intro" aria-labelledby="page-title">
+
+  
+            <div class="intro-content">
+            <p class="eyebrow">NATIONAL FILM AND SOUND ARCHIVE</p>
+
+            <h1 id="page-title">Australian TV<br>Game Shows
+            </h1>
+
+            <p class="intro-text">
+                Explore Australian television game shows from the 1950s to now,
+                through archival footage and stories from the NFSA collection.
+            </p>
+
+             <div class="decade-stats" id="decade-stats">
+                <div class="stat-item">
+                    <span class="stat-number">200</span>
+                    <span class="stat-label">Shows Archived</span>
+                </div>
+
+                <div class="stat-divider-line"></div>
+
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Genres</span>
+                </div>
+                </div>
+            </div>
+
+    
+        </section>
+
+  
+
+<!-- TIMELINE -->
+ 
+        <section class="timeline-section" aria-label="Browse by decade">
+
+           <div class="timeline-scroll">
+            <div class="timeline">
+                <button class="timeline-item active" data-decade="1950s">
+                     <span class="timeline-label">1950s</span>
+                     <span class="timeline-dot"></span>
+                </button>
+
+                 <button class="timeline-item" data-decade="1960s">
+                    <span class="timeline-label">1960s</span>
+                    <span class="timeline-dot"></span>
+                 </button>
+    
+                 <button class="timeline-item" data-decade="1970s">
+                    <span class="timeline-label">1970s</span>
+                    <span class="timeline-dot"></span>
+                </button>
+   
+                <button class="timeline-item" data-decade="1980s">
+                     <span class="timeline-label">1980s</span>
+                     <span class="timeline-dot"></span>
+                </button>
+   
+                <button class="timeline-item" data-decade="1990s">
+                    <span class="timeline-label">1990s</span>
+                    <span class="timeline-dot"></span>
+                </button>
+    
+                <button class="timeline-item" data-decade="2000s">
+                    <span class="timeline-label">2000s</span>
+                    <span class="timeline-dot"></span>
+                </button>
+    
+                <button class="timeline-item" data-decade="2010s">
+                    <span class="timeline-label">2010s</span>
+                    <span class="timeline-dot"></span>
+                </button>
+    
+                <button class="timeline-item" data-decade="now">
+                    <span class="timeline-label">NOW</span>
+                    <span class="timeline-dot"></span>
+                </button>
+            </div>
+        </div>
+
+<!-- CATEGORY FILTERS -->
+
+        <div class="decade-filters">
+            <span class="filter-label">Filter by genre:</span>
+                <button class="filter-chip" type="button" data-genre="all">All</button>
+                <button class="filter-chip active" type="button" data-genre="quiz">Quiz & Trivia</button>
+                <button class="filter-chip" type="button" data-genre="dating">Dating & Relationships</button>
+                <button class="filter-chip" type="button" data-genre="physical">Physical & Action</button>
+                <button class="filter-chip" type="button" data-genre="panel">Panel & Bluffing</button>
+                <button class="filter-chip" type="button" data-genre="racing">Consumer Racing</button>
+   
+        <a href="#" class="discover-button">
+            <span class="discover-icon">⟳</span>
+                Surprise me
+            </a>
+        </div>
+  </section>
+        
+<!-- SELECTED DECADE -->
+
+        <section class="decade-section" aria-labelledby="decade-title">
+            
+            <div class="decade-heading">
+                <p class="eyebrow">THE ARCHIVE</p>
+                <h2 id="decade-title">1950s</h2>
+                <p class="decade-description" id="decade-description">
+                    The beginning of Australian television and the first generation
+                    of local game and quiz shows.
+                </p>
+            </div>
+
+<!-- CONTENT CARDS -->
+
+            <div class="show-grid" id="show-grid">
+
+<!-- CARD 1 -->
+
+                <article class="show-card">
+                    <div class="show-image">
+                        <img
+                            src="assets/images/pressure-pak-show.jpg"
+                            alt="The Pressure Pak Show, Australian television game show"
+                        >
+<!-- YEAR -->
+                        <span class="show-year">1957</span>
+                        <button 
+                            class="play-button" 
+                            type="button"
+                            aria-label="Play The Pressure Pak Show"
+                            data-title="The Pressure Pak Show"
+                            data-year="1957"
+                            data-description="A 1957 Australian television show hosted by Jack Davey, where contestants guessed phrases from a series of clues"
+                        >
+                            <span>▶</span>
+                        </button>
+                    </div>
+
+                    <div class="show-content">
+<!-- GENRE/META -->
+                        <p class="show-meta" data-genre="quiz">Quiz & Trivia</p>
+                        
+                        
+<!-- TITLE -->
+                        <h3>The Pressure Pak Show</h3>
+<!-- DESCRIPTION -->
+                        <p>
+                        A 1957 quiz show hosted by Jack Davey, where contestants guessed phrases from a series of clues
+                        </p>
+
+                    </div>
+                </article>
+
+
+<!-- CARD 2 -->
+
+                <article class="show-card">
+
+                    <div class="show-image">
+
+                        <img
+                            src="assets/images/ask-me-another.jpg"
+                            alt="Ask Me Another"
+                        >
+<!-- YEAR -->
+                        <span class="show-year">1953</span>
+                        <button 
+                            class="play-button" 
+                            type="button"
+                            aria-label="Play Ask Me Another"
+                            data-title="Ask Me Another"
+                            data-year="1953"
+                            data-description="A publicly unseen pilot hosted by radio star Jack Davey — possibly Australia's very first television game show, filmed three years before TV officially launched."
+                        >
+                            <span>▶</span>
+                        </button>
+                    </div>
+
+                    <div class="show-content">
+<!-- GENRE/META -->
+                         <p class="show-meta" data-genre="quiz">Quiz & Trivia</p>
+                        
+<!-- TITLE -->            
+                        <h3>Ask Me Another</h3>
+<!-- DESCRIPTION -->
+                        <p>
+                            A publicly unseen pilot hosted by radio star Jack Davey — possibly Australia's very first television game show, filmed three years before TV officially launched.
+                        </p>
+
+                    </div>
+                </article>
+
+
+<!-- CARD 3 -->
+
+                <article class="show-card">
+                    <div class="show-image">
+
+                        <img
+                            src="assets/images/pick-a-box.jpg"
+                            alt="Pick a Box"
+                        >
+<!-- YEAR -->
+                        <span class="show-year">1957</span>
+                        <button 
+                        class="play-button" 
+                        type="button"
+                        aria-label="Pick a Box"
+                        data-title="Pick a Box"
+                        data-year="1957"
+                        data-description="Husband-and-wife duo Bob and Dolly Dyer hosted this beloved quiz, where contestants could win — or lose — a mystery prize hidden in a box."
+                        >
+                            <span>▶</span>
+                        </button>
+                    </div>
+
+                    <div class="show-content">
+
+<!-- GENRE/META -->
+                         <p class="show-meta" data-genre="quiz">Quiz & Trivia</p>
+                        
+<!-- TITLE -->
+                        <h3>Pick a Box</h3>
+<!-- DESCRIPTION -->
+                        <p>
+                            Husband-and-wife duo Bob and Dolly Dyer hosted this beloved quiz, where contestants could win — or lose — a mystery prize hidden in a box.
+                        </p>
+
+                    </div>
+                </article>
+
+
+<!-- CARD 4 -->
+
+                <article class="show-card">
+                    <div class="show-image">
+
+                        <img
+                            src="assets/images/wheel-of-fortune.jpg"
+                            alt="Wheel of Fortune"
+                        >
+<!-- YEAR -->
+                        <span class="show-year">1959</span>
+                        <button 
+                        class="play-button" 
+                        type="button"
+                        aria-label="Wheel of Fortune"
+                        data-title="Wheel of Fortune"
+                        data-year="1959"
+                        data-description="An early quiz show from producer Reg Grundy, continuing the trend of radio-turned-television game formats in the late 1950s."
+                        >
+                            <span>▶</span>
+                        </button>
+                    </div>
+
+                    <div class="show-content">
+
+<!-- GENRE/META -->
+                         <p class="show-meta" data-genre="quiz">Quiz & Trivia</p>
+                        
+<!-- TITLE -->
+                        <h3>Wheel of Fortune</h3>
+<!-- DESCRIPTION -->
+                        <p>
+                            An early quiz show from producer Reg Grundy, continuing the trend of radio-turned-television game formats in the late 1950s.
+                        </p>
+
+                    </div>
+                </article>
+
+
+<!-- CARD 5 -->
+
+                <article class="show-card">
+                    <div class="show-image">
+
+                        <img
+                            src="assets/images/name-that-tune.jpg"
+                            alt="Name That Tune"
+                        >
+
+<!-- YEAR -->
+                        <span class="show-year">1957</span>
+
+                        <button class="play-button" 
+                        type="button"
+                        aria-label="Play Name That Tune"
+                        data-title="Name That Tune"
+                        data-year="1957"
+                        data-description="A 1957 Australian television game show featuring music, questions and contestants."
+                        >
+                            <span>▶</span>
+                        </button>
+
+                    </div>
+
+                    <div class="show-content">
+
+<!-- GENRE/META -->
+
+                         <p class="show-meta" data-genre="quiz">Quiz & Trivia</p>
+<!-- TITLE -->
+                        <h3>Name That Tune</h3>
+<!-- DESCRIPTION -->
+                        <p>
+                            A 1957 Australian television game show featuring music, questions and contestants.
+                        </p>
+
+                    </div>
+                </article>
+                </div>
+        </section>
+
+<!-- ABOUT -->
+        <section id="about" class="about-section">
+            <div class="about-text">
+            <p class="eyebrow">ABOUT PLAY BACK</p>
+            <h2>Australian Game shows<br>through the archive.</h2>
+            <p>
+                PLAY BACK invites you to journey through the  
+                National Film and Sound Archive’s collection of
+                iconic Australian game shows by decade. Wonder through the decades, press play, and discover the games that had Australia watching.<br>
+                <br>
+                This project was produced by students in the Faculty of Arts & Design from the University of Canberra, 2026. 
+            </p>
+            </div>
+
+        </section>
+    </main>
+
+<!-- FOOTER -->
+
+
+
+    <footer class="site-footer">
+        <p>PLAY BACK</p>
+        <p>NFSA</p>
+    </footer>
+
+<!-- VIDEO STATE -->
+
+    <aside class="video-overlay" aria-label="Show details" aria-hidden="true">
+
+        <div class="video-overlay-content">
+
+            <button 
+            class="video-close" 
+            type="button"
+            aria-label="close show details"
+            >
+            x
+        </button>
+
+        <div class="video-placeholder">
+            <div class="video-placeholder-play">
+                <span>▶</span>
+                </div>
+
+                <p>ARCHIVAL VIDEO</p>
+                </div>
+
+                <div class="video-details">
+                    <p class="show-meta">
+                        <span class="show-tag">GAME SHOW</span>
+                        <span class="show-source">/ NFSA</span>
+                        </p>
+
+    <h2>The Pressure Pak Show</h2>
+
+    <p>A 1957 Australian television quiz show hosted by Jack Davey, where contestants guessed phrases from a series of clues</p>
+
+    <div class="video-metadata">
+        <span>1957</span>
+        <span>TELEVISION</span>
+        <span>AUSTRALIA</span>
+    </div>
+
+    <div class="related-items">
+        <p class="eyebrow">YOU MIGHT ALSO LIKE</p>
+        <div class="related-items-row">
+            <a href="#" class="related-item">
+                <div class="related-item-image">
+                    <img src="assets/images/name-that-tune.jpg"
+                    alt="Name That Tune">
+                </div>
+           <p class="related-item-title">Name That Tune</p>
+                            <p class="related-item-year">1957</p>
+                        </a>
+                        <a href="#" class="related-item">
+                            <div class="related-item-image">
+                                <img src="assets/images/pick-a-box.jpg" alt="Pick a Box">
+                            </div>
+                            <p class="related-item-title">Pick a Box</p>
+                            <p class="related-item-year">1957</p>
+                        </a>
+                        <a href="#" class="related-item">
+                            <div class="related-item-image">
+                                <img src="assets/images/ask-me-another.jpg" alt="Ask Me Another">
+                            </div>
+                            <p class="related-item-title">Ask Me Another</p>
+                            <p class="related-item-year">1953</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+ 
+        </div>
+ 
+    </aside>
+
+    <script src="assets/js/script.js"></script>
+
 </body>
-
 </html>
+
+
+
+
+<!--state messages (error/empty)
+
+               <div class="state-message state-message--error">
+                <p class="state-message-title">Couldn't load this decade</p>
+                <p class="state-message-text">
+                    Something went wrong reaching the archive. Check your connection and try again.
+                </p>
+                <button class="state-message-retry" type="button">Retry</button>
+               </div>
+-->
+               <!--skeleton cards
+ <article class="show-card show-card--skeleton">
+                    <div class="skeleton-block"></div>
+                    <div class="show-content">
+                        <div class="skeleton-line skeleton-line--tag"></div>
+                        <div class="skeleton-line skeleton-line--title"></div>
+                        <div class="skeleton-line skeleton-line--text"></div>
+                        <div class="skeleton-line skeleton-line--text short"></div>
+                    </div>
+                </article>
+
+                 <article class="show-card show-card--skeleton">
+                    <div class="skeleton-block"></div>
+                    <div class="show-content">
+                        <div class="skeleton-line skeleton-line--tag"></div>
+                        <div class="skeleton-line skeleton-line--title"></div>
+                        <div class="skeleton-line skeleton-line--text"></div>
+                        <div class="skeleton-line skeleton-line--text short"></div>
+                    </div>
+                </article>        
+-->
+              
+<!--empty message
+                <div class="state-message state-message--empty">
+                <p class="state-message-title">Nothing here yet</p>
+                <p class="state-message-text">
+                    We don't have any items for this decade right now.
+                </p>
+               </div>
+-->
