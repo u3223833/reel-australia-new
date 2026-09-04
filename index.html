@@ -51,9 +51,11 @@
                 through archival footage and stories from the NFSA collection.
             </p>
 
+        <!--API: TOTAL COUNTS WILL BE CALCULATED DYNAMICALLY FROM DATA RETURNED BY THE API-->
+
              <div class="decade-stats" id="decade-stats">
                 <div class="stat-item">
-                    <span class="stat-number">200</span>
+                    <span class="stat-number">200+</span>
                     <span class="stat-label">Shows Archived</span>
                 </div>
 
@@ -72,6 +74,8 @@
   
 
 <!-- TIMELINE -->
+<!--API: COULD BE GENERATED FROM LIST OF DECADES IN THE DATA RATHER THAN HARDCODED.
+    REPEATED COMONENT: one <button class="timeline-item"> PER DECADE-->
  
         <section class="timeline-section" aria-label="Browse by decade">
 
@@ -120,6 +124,9 @@
         </div>
 
 <!-- CATEGORY FILTERS -->
+ <!--API: GENRES COULD BE GENERATED FROM GENRES IN DATASET
+    REPEATED COMPONENT: ONE <button class="filter-chip"> 
+    per genre using data to match each show genre field-->
 
         <div class="decade-filters">
             <span class="filter-label">Filter by genre:</span>
@@ -138,6 +145,8 @@
   </section>
         
 <!-- SELECTED DECADE -->
+<!--API: HEADING + DESCRIPTION TEXT WILL UPDATE DYNAMICALLY 
+    BASED ON SELECTED DECADE PULLED FROM DECADE METADATA END POINT-->
 
         <section class="decade-section" aria-labelledby="decade-title">
             
@@ -151,10 +160,16 @@
             </div>
 
 <!-- CONTENT CARDS -->
-
+<!--API: GRID WILL BE POPULATED DYNAMICALLY FROM A /SHOWS ENDPOINT,
+    FILTERED BY THE SELECTED DECADE + GENRE.
+    REPEATED COMONENT: ONE <article class="show-card"> PER SHOW RECORD.
+    EXPECTED FIELDS PER SHOW: TITLE, YEAR, GENRE, DESCRIPTION, IMAGE_URL, VIDEO_URL-->
             <div class="show-grid" id="show-grid">
 
 <!-- CARD 1 -->
+<!--TEMPLATE: FIELDS BELOW (IMG SRC/ALT, YEAR, TITLE, GENRE,
+    DESCRIPTION, PLAY BUTTON DATA ATTRIBUTES ARE ALL API DRIVEN 
+    PER SHOW RECORD.)-->
 
                 <article class="show-card">
                     <div class="show-image">
@@ -351,6 +366,84 @@
                 </div>
         </section>
 
+<!-- STATE: LOADING (not rendered as i have no JS to trigger this)
+ SHOWN WHEN A SHOW REQUEST TO THE API IN ACTION, BEFORE API RETURN.
+ REPEATED COMPONENT: ONE SKELETON "show-card" PER EXPECTED RESULT.
+   
+            <section class="decade-section" aria-label="Loading state example">
+                <div class="decade-heading">
+                <p class="eyebrow">THE ARCHIVE</p>
+                <h2>Loading…</h2>
+            </div>
+    
+            <div class="show-grid">
+             <article class="show-card show-card--skeleton">
+                <div class="skeleton-block"></div>
+
+                <div class="show-content">
+                <div class="skeleton-line skeleton-line--tag"></div>
+                <div class="skeleton-line skeleton-line--title"></div>
+                <div class="skeleton-line skeleton-line--text"></div>
+                <div class="skeleton-line skeleton-line--text short"></div>
+            </div>
+        </article>
+
+             <article class="show-card show-card--skeleton">
+                <div class="skeleton-block"></div>
+                <div class="show-content">
+                <div class="skeleton-line skeleton-line--tag"></div>
+                <div class="skeleton-line skeleton-line--title"></div>
+                <div class="skeleton-line skeleton-line--text"></div>
+                <div class="skeleton-line skeleton-line--text short"></div>
+            </div>
+        </article>
+    </div>
+</section>
+-->
+
+<!-- STATE: EMPTY (not rendered as no JS to trigger this)
+     SHOWN WHEN A GENRE/DECADE FILTER COMBINAITON RETURNS NO RESULTS 
+     FROM THE API. REPLACES SHOW-GRID CONTENT ENTIRELY.
+   
+        <section class="decade-section" aria-label="Empty state example">
+         <div class="decade-heading">
+        <p class="eyebrow">THE ARCHIVE</p>
+        <h2>No Results</h2>
+        </div>
+
+        <div class="show-grid">
+        <div class="state-message state-message--empty">
+            <p class="state-message-title">Nothing here yet</p>
+            <p class="state-message-text">
+                We don't have any items for this decade right now.
+            </p>
+        </div>
+    </div>
+</section>
+-->
+
+
+<!-- STATE: ERROR (not rendered as no JS to trigger this)
+     SHOWN IF API RESULTS FAIL. INCLUDES TRY AGAIN ACTION FOR USER.
+
+    <section class="decade-section" aria-label="Error state example">
+    <div class="decade-heading">
+        <p class="eyebrow">THE ARCHIVE</p>
+        <h2>Something Went Wrong</h2>
+        </div>
+
+        <div class="show-grid">
+        <div class="state-message state-message--error">
+            <p class="state-message-title">Couldn't load this decade</p>
+            <p class="state-message-text">
+                Something went wrong reaching the archive. Check your connection and try again.
+            </p>
+            <button class="state-message-retry" type="button">Retry</button>
+            </div>
+        </div>
+    </section>
+-->
+
 <!-- ABOUT -->
         <section id="about" class="about-section">
             <div class="about-text">
@@ -369,15 +462,17 @@
     </main>
 
 <!-- FOOTER -->
-
-
-
     <footer class="site-footer">
         <p>PLAY BACK</p>
         <p>NFSA</p>
     </footer>
 
 <!-- VIDEO STATE -->
+<!--THIS OVERLAY CURRENTLY SHOWS STATIC PLACEHOLDER IN PLACE OF VIDEO -
+    IN A2 WILL EMBED NFSA ARCHIVE VIDEO SOURCED FROM EACH SHOW.
+    API: OVERLAY CONTENT (TITLE, DESCRIPTION, YEAR, RELATED SHOWS)
+    WILL POPULATE DYNAMICALLY BASED ON WHICH SHOWS PLAY BUTTON WAS 
+    CLICKED, USING ITS DATAATTRIBUTES/FETCHED SHOW DETAIL RECORD.-->
 
     <aside class="video-overlay" aria-label="Show details" aria-hidden="true">
 
@@ -414,6 +509,10 @@
         <span>TELEVISION</span>
         <span>AUSTRALIA</span>
     </div>
+
+    <!--API: RELATED ITEMS WILL BE DYNAMICALLY GENERATED - LIKLEY SHOWS 
+        THAT SHARE SAME DECADE OR GENRE, RETURNED BY A /SHOWS{ID}/ RELATED ENDPOINT
+        REPEATED COMPONENT: ONE <a class="related-item"> PER RELATED SHOW -->
 
     <div class="related-items">
         <p class="eyebrow">YOU MIGHT ALSO LIKE</p>
@@ -456,43 +555,8 @@
 
 
 
-<!--state messages (error/empty)
+<!--STATE: EMPTY - SHOWN WHEN GENRE/DECADE FILTERS
+COMBINATION RETURNS ZER RESULTS FROM THE API. 
+REPLACES SHOW-GRIDCONTENT ENTIRELY.
 
-               <div class="state-message state-message--error">
-                <p class="state-message-title">Couldn't load this decade</p>
-                <p class="state-message-text">
-                    Something went wrong reaching the archive. Check your connection and try again.
-                </p>
-                <button class="state-message-retry" type="button">Retry</button>
-               </div>
--->
-               <!--skeleton cards
- <article class="show-card show-card--skeleton">
-                    <div class="skeleton-block"></div>
-                    <div class="show-content">
-                        <div class="skeleton-line skeleton-line--tag"></div>
-                        <div class="skeleton-line skeleton-line--title"></div>
-                        <div class="skeleton-line skeleton-line--text"></div>
-                        <div class="skeleton-line skeleton-line--text short"></div>
-                    </div>
-                </article>
 
-                 <article class="show-card show-card--skeleton">
-                    <div class="skeleton-block"></div>
-                    <div class="show-content">
-                        <div class="skeleton-line skeleton-line--tag"></div>
-                        <div class="skeleton-line skeleton-line--title"></div>
-                        <div class="skeleton-line skeleton-line--text"></div>
-                        <div class="skeleton-line skeleton-line--text short"></div>
-                    </div>
-                </article>        
--->
-              
-<!--empty message
-                <div class="state-message state-message--empty">
-                <p class="state-message-title">Nothing here yet</p>
-                <p class="state-message-text">
-                    We don't have any items for this decade right now.
-                </p>
-               </div>
--->
